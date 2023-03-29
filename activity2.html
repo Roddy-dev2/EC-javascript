@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Activity 2</title>
+	</head>
+	<body>
+		<h1>Activity to get numbers input from User</h1>
+		<!-- use empty p tags as we will fill with innerHTML -->
+		<p id="firstNumber"></p>
+		<p id="secondNumber"></p>
+		<p id="resultNumber"></p>
+
+		<script>
+			let firstNumber = Number(window.prompt("Type a number", ""));
+			document.getElementById(
+				"firstNumber"
+			).innerHTML = `Your first number is ${firstNumber}`; // use backticks so we can add a description to the number
+			let secondNumber = Number(window.prompt("Type another number", ""));
+			document.getElementById(
+				"secondNumber"
+			).innerHTML = `Your second number is ${secondNumber}`;
+
+			let resultNumber = firstNumber / secondNumber; // the calculation
+			if (resultNumber) {
+				// if the result is NaN we want to catch it, resultNumber will be true if it contains a number
+				document.getElementById(
+					"resultNumber"
+				).innerHTML = `first number divided by the second is ${resultNumber}`;
+			} else {
+				document.getElementById(
+					"resultNumber"
+				).innerHTML = `The numbers entered did not compute because ${resultNumber} was the result`;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Activity 1 - Vanilla JS DOM</title>
+		<style>
+			.modifiedParagraph {
+				color: aqua; /*the group od css attributes we add to the p tag */
+				background-color: blueviolet;
+				text-align: right;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="text">Vanilla JS DOM</p>
+		<!--the bit we want to select-->
+		<div>
+			<button id="jsstyle" onclick="js_style()">Style</button>
+			<!-- onclick calls the js function below js_style()-->
+		</div>
+
+		<script>
+			function js_style() {
+				var x = document.getElementById("text"); // select the part of the DOM you want to change
+				x.classList.add("modifiedParagraph"); // and then add the class to change CSS attributes
+			}
+		</script>
+	</body>
+</html>

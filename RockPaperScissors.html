@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rock Paper Scissors</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Mynerve&display=swap");
+		</style>
+		<link rel="stylesheet" href="RockPaperScissors.css" />
+	</head>
+	<body>
+		<h1 class="">Play Rock Paper Scissors</h1>
+
+		<div class="container">
+			<div>
+				<p>To win just remember:</p>
+				<p>Rock smashes Scissors.</p>
+				<p>Paper covers Rock.</p>
+				<p>Scissors cut Paper.</p>
+			</div>
+
+			<div id="mySelection">
+				<button class="playerBtn" value="rock">Rock</button>
+				<button class="playerBtn" value="paper">Paper</button>
+				<button class="playerBtn" value="scissors">Scissors</button>
+			</div>
+
+			<div id="scores">
+				<p id="playerChoice">Your choice:</p>
+				<p id="computerChoice">Computer Chooses:</p>
+				<p id="resultGame"></p>
+			</div>
+			<script defer src="./RockPaperScissors.js"></script>
+
+			<ul id="bestOverAll">
+				<li id="playerScore"></li>
+				<li id="computerScore"></li>
+				<li id="bestOf3"></li>
+			</ul>
+
+			<button id="resetBtn">Play again</button>
+		</div>
+	</body>
+</html>

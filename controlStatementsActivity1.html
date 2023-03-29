@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Activity 1 Control Statements</title>
+	</head>
+	<body>
+		<h1>
+			Activity to get 3 numbers input from User and see if they are all equal
+		</h1>
+		<!-- use empty p tags as we will fill by using innerHTML -->
+		<p id="firstNumber"></p>
+		<p id="secondNumber"></p>
+		<p id="thirdNumber"></p>
+		<p id="result"></p>
+
+		<script>
+			//assign each entered number from user to relevant variable
+			let firstNumber = Number(window.prompt("Type a number", ""));
+			document.getElementById(
+				"firstNumber"
+			).innerHTML = `Your first number is ${firstNumber}`; // use backticks so we can add a description to the number
+
+			let secondNumber = Number(window.prompt("Type another number", ""));
+			document.getElementById(
+				"secondNumber"
+			).innerHTML = `Your second number is ${secondNumber}`;
+
+			let thirdNumber = Number(window.prompt("Type your last number", ""));
+			document.getElementById(
+				"thirdNumber"
+			).innerHTML = `Your third number is ${thirdNumber}`;
+
+			//once we have 3 numbers, evaluate if all numbers are equal and fill result p tag
+			if ((firstNumber == secondNumber) == thirdNumber) {
+				document.getElementById(
+					"result"
+				).innerHTML = `All the numbers are the same`;
+				// and if they are not equal fill the result p tag with a message that they are different
+			} else {
+				document.getElementById(
+					"result"
+				).innerHTML = `All the numbers are different`;
+			}
+		</script>
+	</body>
+</html>

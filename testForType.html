@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>After entering something in dialogue</h1>
+		<p>It should be cast to a number</p>
+
+		<p id="entered"></p>
+		<p id="cast"></p>
+
+		<script>
+			const enteredNumber = window.prompt("Type a number", "");
+			const castNumber = Number(enteredNumber);
+
+			document.getElementById("entered").innerHTML = typeof enteredNumber;
+			document.getElementById("cast").innerHTML = typeof castNumber;
+		</script>
+	</body>
+</html>

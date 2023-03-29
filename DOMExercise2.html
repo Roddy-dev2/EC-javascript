@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Activity 2 - Vanilla JS DOM</title>
+		<style>
+			.title {
+				font-weight: 600;
+			}
+		</style>
+	</head>
+	<body>
+		<p class="title">Input radius value and get the volume of a sphere</p>
+		
+		<div>
+            <form id="sphereForm">
+                <label for="radius">Radius</label><br>
+                <input type="text" id="radius" name="radius"><br>
+                <label for="volume">Volume</label><br>
+                <input type="text" id="volume" name="volume"><br>
+                <input type="submit" value="submit">Calculate Volume</button>
+                <!-- submit form to nowhere so page doesn't reload but handle the click in js -->
+            </form>
+		</div>
+
+		<script>
+            document.addEventListener("DOMContentLoaded", (e) => { // delay adding event listener until DOM loaded
+                let radiusEl = document.getElementById("radius"); // the input 
+                let volumeEl = document.getElementById("volume"); // the result
+                let formEl = document.getElementById("sphereForm"); // select the form so we can add event listner to submit
+
+                formEl.addEventListener('submit', e => { // this is not the same (e) event as above, nested arrow function 
+                    e.preventDefault(); // this is so the form is not submitted
+                    let result = (calculateVolumeFrom(radiusEl.value)).toFixed(3); // call to functio that does the maths
+                    volumeEl.value = result; // move the result back to the form
+                });
+            });
+
+            function calculateVolumeFrom(radius){
+                    return (4 / 3) * Math.PI * radius * radius * radius // do the calc and return it
+            };
+		</script>
+	</body>
+</html>
